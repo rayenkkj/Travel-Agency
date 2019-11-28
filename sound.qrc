@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/sounds">
+        <file>Mortified.mp3</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,13 @@
+INPUT(
+./release\annonce.o
+./release\annonce_type.o
+./release\main.o
+./release\mainmenu.o
+./release\mainwindow.o
+./release\connection.o
+./release\.o
+./release\son.o
+./release\qrc_sound.o
+./release\moc_mainmenu.o
+./release\moc_mainwindow.o
+);
