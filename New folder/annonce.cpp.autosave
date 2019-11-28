@@ -1,0 +1,48 @@
+#include "paiement.h"
+#include <QDebug>
+
+paiement::paiement(){
+    codepaie=0;
+    typepaie="";
+    typecons="";
+}
+
+paiement::paiement(QString typepaie, QString typecons,int codepaie){
+    this->typepaie=typepaie;
+    this->typecons=typecons;
+    this->codepaie=codepaie;
+}
+
+QString paiement::get_typepaie(){return  typepaie;}
+QString paiement::get_typecons(){return typecons;}
+int paiement::get_codepaie(){return  codepaie;}
+
+bool paiement::ajouter_pa(){
+    QSqlQuery query;
+    QString res= QString::number(codepaie);
+    query.prepare("INSERT INTO PAIEMENT(TYPEPAIE, TYPECONS, CODEPAIE) "
+                        "VALUES (:typepaie, :typecons, :codepaie)");
+    query.bindValue(":codepaie", res);
+    query.bindValue(":typepaie", typepaie);
+    query.bindValue(":typecons", typecons);
+
+    return    query.exec();
+}
+
+QSqlQueryModel* paiement::afficher_pa(){
+    QSqlQueryModel* model= new QSqlQueryModel();
+    model->setQuery("select * from PAIEMENT");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("CODEAN"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NBPLACE"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PAYS"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("TYPEAN"));
+        return model;
+    }
+
+bool paiement::supprimer_pa(int codepaie){
+    QSqlQuery query;
+    QString res= QString::number(codean);
+    query.prepare("Delete from ANNONCE where CODEAN = :codean ");
+    query.bindValue(":codean", res);
+    return    query.exec();
+}
