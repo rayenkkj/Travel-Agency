@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>BOROS.mp3</file>
+        <file>button-19.mp3</file>
+    </qresource>
+</RCC>
