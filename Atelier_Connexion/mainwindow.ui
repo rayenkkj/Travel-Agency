@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>912</width>
-    <height>530</height>
+    <width>1022</width>
+    <height>645</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Gestion des Clients</string>
+   <string>Gestion des Agents/Departements</string>
   </property>
   <property name="styleSheet">
    <string notr="true">#MyLoginForm {
@@ -486,16 +486,16 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>20</y>
-      <width>891</width>
-      <height>451</height>
+      <y>0</y>
+      <width>1011</width>
+      <height>571</height>
      </rect>
     </property>
     <property name="tabShape">
      <enum>QTabWidget::Triangular</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
@@ -514,7 +514,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="AddA">
        <attribute name="title">
@@ -525,8 +525,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          <rect>
           <x>10</x>
           <y>50</y>
-          <width>491</width>
-          <height>301</height>
+          <width>581</width>
+          <height>341</height>
          </rect>
         </property>
         <property name="title">
@@ -537,12 +537,15 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>240</y>
-           <width>113</width>
+           <width>151</width>
            <height>20</height>
           </rect>
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Adresse de l'agent</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="prenomagent">
@@ -550,9 +553,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>200</y>
-           <width>113</width>
+           <width>151</width>
            <height>20</height>
           </rect>
+         </property>
+         <property name="placeholderText">
+          <string>Code de l'agent</string>
          </property>
         </widget>
         <widget class="QLabel" name="label">
@@ -612,12 +618,15 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>40</y>
-           <width>113</width>
+           <width>151</width>
            <height>20</height>
           </rect>
          </property>
          <property name="text">
           <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Mot de passe de l'agent</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="age">
@@ -625,19 +634,22 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>160</y>
-           <width>113</width>
+           <width>151</width>
            <height>20</height>
           </rect>
          </property>
          <property name="text">
           <string/>
          </property>
+         <property name="placeholderText">
+          <string>l'age de l'agent</string>
+         </property>
         </widget>
         <widget class="QPushButton" name="pb_ajouter">
          <property name="geometry">
           <rect>
-           <x>410</x>
-           <y>270</y>
+           <x>490</x>
+           <y>160</y>
            <width>75</width>
            <height>23</height>
           </rect>
@@ -677,9 +689,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>70</y>
-           <width>113</width>
+           <width>151</width>
            <height>22</height>
           </rect>
+         </property>
+         <property name="placeholderText">
+          <string>Nom de l'agent</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="mdp">
@@ -687,195 +702,232 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <rect>
            <x>260</x>
            <y>110</y>
-           <width>113</width>
+           <width>151</width>
            <height>22</height>
           </rect>
          </property>
+         <property name="placeholderText">
+          <string>Prénom de l'agent</string>
+         </property>
         </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="addT">
-       <attribute name="title">
-        <string>Affichage trier selon Code agent</string>
-       </attribute>
-       <widget class="QTableWidget" name="tableWidget">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>70</y>
-          <width>511</width>
-          <height>271</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="affichagetrie">
-        <property name="geometry">
-         <rect>
-          <x>480</x>
-          <y>350</y>
-          <width>93</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Trier</string>
-        </property>
+        <widget class="QLineEdit" name="poste">
+         <property name="geometry">
+          <rect>
+           <x>260</x>
+           <y>280</y>
+           <width>151</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="placeholderText">
+          <string>Poste de l'agent</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_25">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>280</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Poste</string>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="modif">
        <attribute name="title">
         <string>Modifier agent</string>
        </attribute>
-       <widget class="QLabel" name="label_8">
+       <widget class="QGroupBox" name="groupBox_2">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>80</y>
-          <width>161</width>
-          <height>16</height>
+          <x>10</x>
+          <y>0</y>
+          <width>881</width>
+          <height>381</height>
          </rect>
         </property>
-        <property name="text">
-         <string>Code de l'agent a modifier :</string>
+        <property name="title">
+         <string>Modifier</string>
         </property>
-       </widget>
-       <widget class="QLineEdit" name="numagent_3">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>80</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="pb_modifier">
-        <property name="geometry">
-         <rect>
-          <x>540</x>
-          <y>310</y>
-          <width>93</width>
-          <height>28</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>modifier</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="nomagent_2">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>120</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="prenomagent_2">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>170</y>
-          <width>111</width>
-          <height>21</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="age_2">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>210</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="mdp_2">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>250</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_9">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>120</y>
-          <width>121</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Mot de passe</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>180</y>
-          <width>151</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Adresse</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_12">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>260</y>
-          <width>151</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Prénom de l'agent</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_13">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>300</y>
-          <width>111</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Nom de l'agent</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="adresse_2">
-        <property name="geometry">
-         <rect>
-          <x>240</x>
-          <y>290</y>
-          <width>113</width>
-          <height>22</height>
-         </rect>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_11">
-        <property name="geometry">
-         <rect>
-          <x>60</x>
-          <y>220</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Age de l'agent</string>
-        </property>
+        <widget class="QLineEdit" name="numagent_3">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>20</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>161</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Code de l'agent a modifier :</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="nomagent_2">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>60</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>121</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Mot de passe</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>151</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Adresse</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="prenomagent_2">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>100</y>
+           <width>111</width>
+           <height>21</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="age_2">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>140</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_11">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Age de l'agent</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_12">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>200</y>
+           <width>151</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Prénom de l'agent</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="mdp_2">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>190</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="adresse_2">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>230</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_13">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>240</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Nom de l'agent</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pb_modifier">
+         <property name="geometry">
+          <rect>
+           <x>450</x>
+           <y>70</y>
+           <width>93</width>
+           <height>28</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>modifier</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_26">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>290</y>
+           <width>55</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Poste</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="poste2">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>280</y>
+           <width>113</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="supp">
@@ -933,6 +985,19 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          </rect>
         </property>
        </widget>
+       <widget class="QPushButton" name="show">
+        <property name="geometry">
+         <rect>
+          <x>700</x>
+          <y>330</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Afficher</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
@@ -985,6 +1050,60 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab_9">
+       <attribute name="title">
+        <string>affichage par poste</string>
+       </attribute>
+       <widget class="QPushButton" name="affichertri">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>350</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Afficher</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tabaffiche">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>611</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="poste4">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>60</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>poste</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QCommandLinkButton" name="previous">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>500</y>
+        <width>187</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Page précédente</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -996,15 +1115,15 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>711</width>
-        <height>411</height>
+        <width>1001</width>
+        <height>541</height>
        </rect>
       </property>
       <property name="tabShape">
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -1089,9 +1208,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          <rect>
           <x>220</x>
           <y>80</y>
-          <width>113</width>
+          <width>141</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="placeholderText">
+         <string>ID de Departement</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_nomdep">
@@ -1099,9 +1221,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          <rect>
           <x>220</x>
           <y>140</y>
-          <width>113</width>
+          <width>141</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Nom de Departement</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_typedep">
@@ -1109,9 +1234,12 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          <rect>
           <x>220</x>
           <y>190</y>
-          <width>113</width>
+          <width>141</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Type de dep</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="lineEdit_nbagent">
@@ -1119,8 +1247,21 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          <rect>
           <x>220</x>
           <y>240</y>
-          <width>113</width>
+          <width>141</width>
           <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Nombre d'agent</string>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tabdepartement_2">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>0</y>
+          <width>631</width>
+          <height>321</height>
          </rect>
         </property>
        </widget>
@@ -1178,6 +1319,19 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           <width>651</width>
           <height>321</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="afficherdepartement">
+        <property name="geometry">
+         <rect>
+          <x>780</x>
+          <y>160</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Afficher</string>
         </property>
        </widget>
       </widget>
@@ -1342,6 +1496,163 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab_10">
+       <attribute name="title">
+        <string>afficher trier</string>
+       </attribute>
+       <widget class="QPushButton" name="affichertrie2">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>350</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Afficher</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tabafficherdep_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>70</y>
+          <width>581</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_11">
+     <attribute name="title">
+      <string>Agent Role </string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1021</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_12">
+       <attribute name="title">
+        <string>Ajouter</string>
+       </attribute>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>90</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Poste</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="poste3">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>90</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Poste </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="role">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>440</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="description">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>150</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="placeholderText">
+         <string>Description</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_28">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>150</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Description</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_13">
+       <attribute name="title">
+        <string>Supprimer</string>
+       </attribute>
+       <widget class="QLineEdit" name="post5">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>70</y>
+          <width>113</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_29">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Poste</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="supprole">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>290</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -1351,7 +1662,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>912</width>
+     <width>1022</width>
      <height>26</height>
     </rect>
    </property>

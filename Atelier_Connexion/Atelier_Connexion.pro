@@ -32,7 +32,8 @@ SOURCES += \
     connection.cpp \
     agent.cpp \
     departement.cpp \
-    son.cpp
+    son.cpp \
+    role.cpp
 
 HEADERS += \
     mainmenu.h \
@@ -40,12 +41,14 @@ HEADERS += \
     connection.h \
     agent.h \
     departement.h \
-    son.h
+    son.h \
+    role.h
 
 FORMS += \
         mainmenu.ui \
         mainwindow.ui \
-    son.ui
+    son.ui \
+    departement.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

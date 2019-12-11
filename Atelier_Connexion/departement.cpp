@@ -93,3 +93,13 @@ QSqlQueryModel* departement ::rechercherdep(QString iddepartement){
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("NBAGENT"));
         return model;
     }
+/*QSqlQueryModel* departement::trier_rec3()
+{
+    QSqlQueryModel* model= new QSqlQueryModel();
+    model->setQuery("select * from DEPARTEMENT order by IDDEPARTEMENT");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("IDDEPARTEMENT"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMDEP"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("TYPEDEP"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("¨NBAGENT"));
+        return model;
+}*/

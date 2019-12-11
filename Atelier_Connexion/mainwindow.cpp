@@ -21,13 +21,15 @@ MainWindow::~MainWindow()
 void MainWindow::on_pb_ajouter_clicked()
 {
     mettreMusique();
+
     QString numagent = ui->numagent->text();
     int age = ui->age->text().toInt();
     QString prenomagent= ui->prenomagent->text();
     QString nomagent= ui->nomagent->text();
     QString mdp=ui->mdp->text();
     QString adresse=ui->adresse->text();
-  Agent a(numagent, nomagent, prenomagent,age,mdp,adresse);
+    QString poste=ui->poste->text();
+  Agent a(numagent, nomagent, prenomagent,age,mdp,adresse,poste);
   bool test=a.ajouter_ag();
   if(test){
     ui->tabagent->setModel(tmpagent.afficher_ag());   //refresh
@@ -49,17 +51,26 @@ void MainWindow::on_pb_supprimer_clicked()
     mettreMusique();
 QString numagent = ui->numagent_2->text();
 bool test=tmpagent.supprimer_ag(numagent);
-if(test)
+if (ui->numagent->text().isEmpty())
+{
+    QMessageBox::critical(this, QObject::tr("Supprimer un Agent"),
+                QObject::tr("Erreur !.\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);
+}
+else if(test == false)
+{
+    QMessageBox::critical(this, QObject::tr("Supprimer un Agent"),
+                QObject::tr("Erreur !.\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);
+}
+else if (test)
 {ui->tabagent->setModel(tmpagent.afficher_ag());//refresh
     QMessageBox::information(this, QObject::tr("Supprimer un Agent"),
                 QObject::tr("Agent supprimé.\n"
                             "Click Cancel to exit."), QMessageBox::Cancel);
 
 }
-else
-    QMessageBox::critical(this, QObject::tr("Supprimer un Agent"),
-                QObject::tr("Erreur !.\n"
-                            "Click Cancel to exit."), QMessageBox::Cancel);
+
 }
 void MainWindow :: on_pb_modifier_clicked()
 {
@@ -70,7 +81,8 @@ void MainWindow :: on_pb_modifier_clicked()
     QString nomagent= ui->nomagent_2->text();
     QString mdp=ui->mdp_2->text();
     QString adresse=ui->adresse_2->text();
-  Agent a(numagent, nomagent, prenomagent,age,mdp,adresse);
+    QString poste = ui->poste2->text();
+  Agent a(numagent, nomagent, prenomagent,age,mdp,adresse,poste);
   bool test=a.modifier_ag(numagent);
   if(test){
     ui->tabagent->setModel(tmpagent.afficher_ag());//refresh
@@ -170,3 +182,72 @@ void MainWindow::on_rechercherd_clicked()
       QObject::tr("Departement recherché.\n"
                   "Click Cancel to exit."), QMessageBox::Cancel);
 }
+
+void MainWindow::on_affichertri_clicked()
+{
+
+        mettreMusique();
+        QString poste= ui->poste4->text();
+        ui->tabaffiche->setModel(tmpagent.trier_rec2(poste));   //refresh
+        QMessageBox::information(this, QObject::tr("Rechercher une les agent dans un poste "),
+        QObject::tr("Poste trié.\n"
+                    "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+/*void MainWindow::on_affichertrie2_clicked()
+{
+    mettreMusique();
+    ui->tabafficherdep_2->setModel(tmpdepartement.trier_rec3());   //refresh
+    QMessageBox::information(this, QObject::tr("Rechercher une departement"),
+    QObject::tr("departement trié.\n"
+                "Click Cancel to exit."), QMessageBox::Cancel);
+}*/
+
+void MainWindow::on_show_clicked()
+{
+    mettreMusique();
+    ui->tabagent->setModel(tmpagent.afficher_ag());
+}
+
+void MainWindow::on_afficherdepartement_clicked()
+{
+
+    mettreMusique();
+    ui->tabdepartement->setModel(tmpdepartement.afficher_dep());   //refresh
+}
+
+void MainWindow::on_next_clicked()
+{
+
+}
+
+void MainWindow::on_previous_clicked()
+{
+    this->hide();
+}
+
+void MainWindow::on_role_clicked()
+{
+
+        mettreMusique();
+        QString poste = ui->poste3->text();
+        QString description=ui->description->text();
+      Role r(poste,description);
+      bool test=r.ajouter_role();
+      if(test){
+        //ui->tabagent->setModel(tmpagent.afficher_ag());   //refresh
+        QMessageBox::information(this, QObject::tr("Ajouter un Role"),
+        QObject::tr("Role ajouté.\n"
+                    "Click Cancel to exit."), QMessageBox::Cancel);
+
+    }
+      else
+          QMessageBox::critical(this, QObject::tr("Ajouter un Role"),
+                      QObject::tr("Erreur !.\n"
+                                  "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+
+
+}
+

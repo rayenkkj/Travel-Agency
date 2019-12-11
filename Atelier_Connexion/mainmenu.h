@@ -1,7 +1,7 @@
 #ifndef MAINMENU_H
 #define MAINMENU_H
 #include "mainwindow.h"
-
+#include"departement.h"
 
 #include <QDialog>
 
@@ -20,9 +20,12 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    //void on_pushButton_2_clicked();
+
 private:
     Ui::MainMenu *ui;
     MainWindow* connect;
+    departement* connect2;
 };
 
 #endif // MAINMENU_H

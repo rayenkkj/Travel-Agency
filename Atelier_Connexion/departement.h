@@ -38,6 +38,7 @@ public:
     bool supprimer_dep(QString iddepartement);
     bool modifier_dep(QString iddepartement);
     QSqlQueryModel * rechercherdep(QString);
+    QSqlQueryModel * trier_rec3();
 
 private:
     int nbagent;

@@ -25,22 +25,24 @@ class Agent
 {
 public:
     Agent();
-    Agent( QString, QString ,QString,int,QString, QString );
+    Agent( QString, QString ,QString,int,QString, QString,QString );
     QString get_numagent();
     QString get_nomagent();
     QString get_prenomagent();
     int get_age();
     QString get_mdp();
     QString get_adresse();
+    QString get_poste();
     bool ajouter_ag();
     QSqlQueryModel* afficher_ag();
     bool supprimer_ag(QString numagent);
     bool modifier_ag(QString numagent);
     QSqlQueryModel* affichertrie_ag();
     QSqlQueryModel * rechercher(QString);
+    QSqlQueryModel*  trier_rec2(QString poste);
 
 private:
-    QString numagent,nomagent,prenomagent,mdp,adresse;
+    QString numagent,nomagent,prenomagent,mdp,adresse,poste;
     int age;
 };
 
