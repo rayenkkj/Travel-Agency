@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "connection.h"
-#include "mainmenu.h"
-#include <QMediaPlayer>
 #include <QApplication>
 #include <QMessageBox>
 #include <QtWidgets>
@@ -13,17 +11,23 @@
 int main(int argc, char *argv[])
 {
     QApplication ab(argc, argv);
-    MainMenu w ;
+    MainWindow w ;
+    w.show();
     Connection c;
+    bool test=c.createconnect();
+    if(test)
+    {w.show();
+        QMessageBox::information(nullptr,QObject::tr("database is open"),
+                              QObject::tr("connection successful .\n"
+                                          "Click Cancel to exit."),QMessageBox::Ok );
 
 
-    try {
-        c.createconnect();
-        w.show();
-    } catch (QString s) {
-        qDebug()<<s;
     }
-
+    else
+        QMessageBox::critical(nullptr,QObject::tr("database is not open"),
+                              QObject::tr("connection failed .\n"
+                                          "Click Cancel to exit."),QMessageBox::Cancel );
 
     return ab.exec();
 }
+
